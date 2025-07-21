@@ -1,6 +1,6 @@
 require('dotenv').config();
-//require('./scheduler');
-const { appendToSheet } = require("./writetosheet");
+require('./scheduler');
+//const { appendToSheet } = require("./writetosheet");
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
@@ -98,11 +98,11 @@ app.post("/webhook", async (req, res) => {
             receivedMessages.push(log);
             // saveJson(receivedFilePath, receivedMessages);
             console.log("reached webhook");
-            await appendToSheet({
-              name: 'Webhook Event',
-              mobile: msg.from || 'Unknown',
-              message: JSON.stringify(log)
-            });
+            // await appendToSheet({
+            //   name: 'Webhook Event',
+            //   mobile: msg.from || 'Unknown',
+            //   message: JSON.stringify(log)
+            // });
             console.log("📥 Received Message:", log);
           });
         }
@@ -126,11 +126,11 @@ app.post("/webhook", async (req, res) => {
             const updatedLog = currentLog.concat(statusData);
             // saveJson(statusLogPath, updatedLog);
             console.log("reached webhook");
-            await appendToSheet({
-              name: 'Webhook Event',
-              mobile: msg.from || 'Unknown',
-              message: JSON.stringify(updatedLog)
-            });
+            // await appendToSheet({
+            //   name: 'Webhook Event',
+            //   mobile: msg.from || 'Unknown',
+            //   message: JSON.stringify(updatedLog)
+            // });
             console.log("📥 Received Message:", updatedLog);
             console.log(`📩 Status update received:`, statusData);
           }
@@ -149,11 +149,11 @@ app.post("/webhook", async (req, res) => {
               errorMessages.push(error);
               //saveJson(errorFilePath, errorMessages);
                console.log("reached webhook");
-              await appendToSheet({
-                name: 'Webhook Event',
-                mobile: msg.from || 'Unknown',
-                message: JSON.stringify(error)
-              });
+              // await appendToSheet({
+              //   name: 'Webhook Event',
+              //   mobile: msg.from || 'Unknown',
+              //   message: JSON.stringify(error)
+              // });
               console.log("📥 Received Message:", error);
               console.log("❌ Message Error:", error);
             }
