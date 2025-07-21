@@ -1,5 +1,5 @@
 require('dotenv').config();
-require('./scheduler');
+//require('./scheduler');
 //const { appendToSheet } = require("./writetosheet");
 const express = require('express');
 const path = require('path');
