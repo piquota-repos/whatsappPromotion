@@ -4,7 +4,11 @@ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const app = express();
- 
+ const https = require("https");
+
+const agent = new https.Agent({  
+  rejectUnauthorized: false  // ⚠️ disables SSL check
+});
 const fs = require('fs');
  
 app.use('/images', express.static(path.join(__dirname, '../public/images')));
@@ -67,7 +71,8 @@ const sendMessage = async ({ phone, name, user }) => {
       headers: {
         Authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
         'Content-Type': 'application/json'
-      }
+      },
+        httpsAgent: agent
     });
  
     const log = {
