@@ -1,11 +1,11 @@
 [  
     {
         "name": "Dr.Maanvi",
-        "phone_id": "865328856653078",
-        "META_URL": "https://graph.facebook.com/v23.0/865328856653078/marketing_messages",
-        "template_name": "vrsi_manavi_second_template",
+        "phone_id": "783316808200454",
+        "META_URL": "https://graph.facebook.com/v22.0/783316808200454/register",
+        "template_name": "vrsi_thrid_template",
         "language": "en_US",
-        "image_url": "https://whatsapppromotion.onrender.com/images/Dr.Manani_2.jpeg"
+        "image_url": "https://whatsapppromotion.onrender.com/images/Dr.Manani_3.jpeg"
     }
     
 ]
